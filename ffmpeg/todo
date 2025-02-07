@@ -1,5 +1,5 @@
 sudo apt install libavformat-dev libavcodec-dev libavutil-dev -y
 sudo apt install pkg-config -y
 sudo apt install libavfilter-dev -y
-export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH
 sudo apt install libavdevice-dev -y
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:$PKG_CONFIG_PATH

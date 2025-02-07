@@ -9,7 +9,7 @@ fn convert_mp4_to_mkv(input_path: &Path) -> Result<(), ffmpeg::Error> {
     let mut ictx = ffmpeg::format::input(input_path)?;
 
     // Create output path with .mkv extension
-    let output_path = input_path.with_extension("mp4");
+    let output_path = input_path.with_extension("mkv");
     let mut octx = ffmpeg::format::output(&output_path)?;
 
     // Map input streams to output streams
@@ -25,7 +25,6 @@ fn convert_mp4_to_mkv(input_path: &Path) -> Result<(), ffmpeg::Error> {
         unsafe {
             (*modified_params.as_mut_ptr()).codec_tag = 0;
         }
-        // modified_params.set_codec_tag(0); // Assuming set_codec_tag exists or use appropriate method to clear the tag
 
         // Set parameters
         ostream.set_parameters(modified_params);

@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  my-debian-service:
+    image: debian:latest
+    build:
+      context: .
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: tail -f /dev/null
+
+
+volumes:
+  app:
